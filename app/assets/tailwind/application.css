@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@keyframes slow-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(3deg);
+  }
+}
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+.animate-slow-float {
+  animation: slow-float 12s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 5s ease-in-out infinite;
+}
