@@ -6,21 +6,21 @@
             <p>Empowering learners through innovation and community-driven education.</p>
         </div>
         <div>
-            <h4 class="text-white font-semibold mb-3">Explore</h4>
+            <h4 class="text-white font-semibold mb-3">For user</h4>
             <ul class="space-y-2">
-                <li><a href="#" class="hover:text-blue-300">Courses</a></li>
-                <li><a href="#" class="hover:text-blue-300">Mentors</a></li>
-                <li><a href="#" class="hover:text-blue-300">Resources</a></li>
-                <li><a href="#" class="hover:text-blue-300">Community</a></li>
+                <% if current_user %>
+                <li><%= link_to "Dashboard", dashboard_path, class:"hover:text-blue-300" %></li>
+                <% else %>
+                <li><%= link_to "Login", new_user_session_path , class:"hover:text-blue-300" %></li>
+                <li><%= link_to "Sign up", new_user_registration_path, class:"hover:text-blue-300" %></li>
+                <% end %>
             </ul>
         </div>
         <div>
             <h4 class="text-white font-semibold mb-3">Company</h4>
             <ul class="space-y-2">
-                <li><a href="#" class="hover:text-blue-300">About</a></li>
-                <li><a href="#" class="hover:text-blue-300">Careers</a></li>
-                <li><a href="#" class="hover:text-blue-300">Blog</a></li>
-                <li><a href="#" class="hover:text-blue-300">Contact</a></li>
+                <li><%= link_to "About", about_path , class:"hover:text-blue-300" %></li>
+                <li><%= link_to "Contact", contact_path, class:"hover:text-blue-300"%></li>
             </ul>
         </div>
         <div>

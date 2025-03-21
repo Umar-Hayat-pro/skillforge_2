@@ -1,8 +1,13 @@
- <div class="flex gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg shadow-white/5 shadow-inner">
-     <%= render partial: "shared/components/navlink", locals: { link: root_path , title: "HOME" } %>
-     <%= render partial: "shared/components/navlink", locals: { link:  about_path , title: "ABOUT" } %>
-     <%= render partial: "shared/components/navlink", locals: { link: contact_path , title: "CONTACT" } %>
-     <%= render partial: "shared/components/navlink", locals: { link: "#", title: "MENTORS" } %>
-     <%= render partial: "shared/components/navlink", locals: { link: "#", title: "SETTINGS" } %>
+<div class="flex gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg shadow-white/5 shadow-inner">
+    <%= render partial: "shared/components/navlink", locals: { link: root_path, title: "HOME" } %>
 
- </div>
+    <% if current_user %>
+    <%= render partial: "shared/components/navlink", locals: { link: dashboard_path, title: "DASHBOARD" } %>
+    <% else %>
+    <%= render partial: "shared/components/navlink", locals: { link: about_path, title: "ABOUT" } %>
+    <%= render partial: "shared/components/navlink", locals: { link: contact_path, title: "CONTACT" } %>
+    <% end %>
+
+    <%= render partial: "shared/components/navlink", locals: { link: "#", title: "MENTORS" } %>
+    <%= render partial: "shared/components/navlink", locals: { link: "#", title: "SETTINGS" } %>
+</div>

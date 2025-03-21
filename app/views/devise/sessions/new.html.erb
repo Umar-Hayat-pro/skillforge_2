@@ -1,0 +1,32 @@
+<h2 class="text-3xl font-bold text-center text-white mb-8">Welcome Back</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "max-w-lg mx-auto bg-white/5 border border-white/10 rounded-2xl backdrop-blur-lg p-8 shadow-lg space-y-6" }) do |f| %>
+
+<%= render "devise/shared/error_messages", resource: resource %>
+
+<div>
+    <%= f.label :email, class: "block text-sm font-medium text-white/80 mb-1" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full bg-black/40 border border-white/20 rounded-lg p-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" %>
+</div>
+
+<div>
+    <%= f.label :password, class: "block text-sm font-medium text-white/80 mb-1" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "w-full bg-black/40 border border-white/20 rounded-lg p-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" %>
+</div>
+
+<% if devise_mapping.rememberable? %>
+<div class="flex items-center gap-2 text-white/70 text-sm">
+    <%= f.check_box :remember_me, class: "accent-blue-500" %>
+    <%= f.label :remember_me, class: "cursor-pointer" %>
+</div>
+<% end %>
+
+<div class="pt-4">
+    <%= f.submit "Log in", class: "w-full py-3 bg-blue-500/20 hover:bg-blue-500/40 text-blue-100 border border-blue-400 rounded-full font-semibold tracking-wide transition-all duration-300" %>
+</div>
+<% end %>
+
+<div class="text-center mt-6 text-sm text-white/60">
+    Don’t have an account yet?
+    <%= link_to "Sign up", new_user_registration_path, class: "text-blue-300 hover:underline font-semibold" %>
+</div>
