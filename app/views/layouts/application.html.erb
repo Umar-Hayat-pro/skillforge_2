@@ -26,13 +26,20 @@
 <!--<body class="bg-black min-h-screen flex flex-col"> -->
 
 <body class="bg-black text-white px-4 pt-10 sm:px-6 sm:pt-14 sm:pb-24">
-    <main class="flex-1">
+    <main class="flex-1 min-h-screen">
+        <!-- Add bottom padding so content doesn't get hidden under navbar -->
         <%= yield %>
+        <!-- Fixed Dock Navbar -->
+        <div class="fixed bottom-6 z-50 w-full flex justify-center">
+            <%= render partial: "shared/navbar" %>
+        </div>
     </main>
+    <%= render "shared/footer" %>
 
-    <div class="sticky bottom-6 z-50 flex justify-center">
-        <%= render partial: "shared/navbar" %>
-    </div>
+
+
+
+
 </body>
 
 
